@@ -18,6 +18,14 @@
 * `$ yarn build:server:watch` - Builds the server app, watches for changes, and starts the server.
 * `$ yarn start` - Starts the server.
 
+##### Deploying App
+
+1. Make sure you have the [Heroku CLI](https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up) installed.
+2. Add the app's remote Heroku repository as a remote in your current repository.
+    ```
+    $ heroku git:remote -a <project>   # project is the name of the Heroku project
+    ```
+
 ### Contribution Guidelines
 
 ##### ESLint + Prettier
