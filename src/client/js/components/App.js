@@ -1,5 +1,16 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
+import Navbar from './Navbar';
 
-const App = () => <div>Hello World!!! Aw yeah!</div>;
+function App(props) {
+  return (
+    <Fragment>
+      <Navbar />
+      <div>Hello</div>
+    </Fragment>
+  );
+}
+
+App.propTypes = {};
 
 export default App;
