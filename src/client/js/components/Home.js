@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
 import Mailto from 'react-protected-mailto';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import trackPageView from '../decorators/trackPageView';
+import * as analytics from '../lib/analytics';
 
 const styles = theme => ({
   email: {
@@ -30,6 +32,9 @@ const styles = theme => ({
   }
 });
 
+const trackEvent = (category, action) => () =>
+  analytics.event({ category, action });
+
 const Home = props => {
   const { classes } = props;
 
@@ -43,7 +48,10 @@ const Home = props => {
         />
       </Grid>
       <Grid item container justify="center" xs={12}>
-        <Typography variant="subheading">
+        <Typography
+          variant="subheading"
+          onClick={trackEvent('navigation', 'email')}
+        >
           <Mailto className={classes.email} email="scott.schmalz@gmail.com" />
         </Typography>
       </Grid>
@@ -53,6 +61,7 @@ const Home = props => {
           rel="noopener noreferrer"
           target="_blank"
           href="https://github.com/schmalzs"
+          onClick={trackEvent('navigation', 'github')}
         >
           <FontAwesomeIcon size="3x" icon={['fab', 'github']} />
         </a>
@@ -61,6 +70,7 @@ const Home = props => {
           rel="noopener noreferrer"
           target="_blank"
           href="https://www.linkedin.com/in/scottschmalz/"
+          onClick={trackEvent('navigation', 'linkedin')}
         >
           <FontAwesomeIcon size="3x" icon={['fab', 'linkedin']} />
         </a>
@@ -73,4 +83,4 @@ Home.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(Home);
+export default trackPageView(withStyles(styles)(Home));
