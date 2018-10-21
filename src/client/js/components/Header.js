@@ -6,18 +6,23 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 
 const styles = theme => ({
+  name: {
+    fontWeight: 'bold'
+  },
   toolbar: {
     padding: theme.spacing.unit * 2
   }
 });
 
 const Header = props => {
-  const { classes } = props;
+  const {
+    classes: { name, toolbar }
+  } = props;
 
   return (
-    <AppBar position="static" color="default">
-      <Toolbar className={classes.toolbar}>
-        <Typography variant="h2" color="inherit">
+    <AppBar position="static" color="primary">
+      <Toolbar className={toolbar}>
+        <Typography variant="h2" color="inherit" className={name}>
           Scott Schmalz
         </Typography>
       </Toolbar>
