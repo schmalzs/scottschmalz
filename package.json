@@ -4,15 +4,16 @@
   "description": "",
   "main": "dist/server/index.js",
   "scripts": {
-    "build": "rimraf dist && run-p build:client build:server",
+    "build": "rimraf dist && run-p build:client:production build:server",
     "build:watch": "rimraf dist && run-p build:client:watch build:server:watch",
-    "build:client": "rimraf dist/public && webpack",
-    "build:client:watch": "nodemon --watch src/client --exec yarn build:client",
+    "build:client:development": "rimraf dist/public && webpack --config webpack.config.dev.js",
+    "build:client:production": "rimraf dist/public && NODE_ENV=production webpack --config webpack.config.prod.js",
+    "build:client:watch": "nodemon --watch src/client --exec yarn build:client:development",
     "build:server": "rimraf dist/server && babel src/server -d dist/server",
     "build:server:watch": "nodemon --watch src/server --exec run-s build:server start",
     "lint": "eslint .",
     "heroku-postbuild": "yarn build",
-    "start": "node dist/server",
+    "start": "NODE_ENV=production node dist/server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -43,7 +44,7 @@
     "eslint-plugin-prettier": "^2.6.2",
     "eslint-plugin-react": "^7.11.1",
     "html-webpack-plugin": "^3.2.0",
-    "mini-css-extract-plugin": "^0.4.2",
+    "mini-css-extract-plugin": "^0.4.4",
     "mocha": "^5.2.0",
     "node-sass": "^4.9.3",
     "nodemon": "^1.18.3",
@@ -57,6 +58,7 @@
     "style-loader": "^0.22.1",
     "webpack": "^4.17.1",
     "webpack-cli": "^3.1.0",
+    "webpack-merge": "^4.1.4",
     "yarn": "^1.9.4"
   },
   "dependencies": {
