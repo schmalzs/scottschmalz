@@ -1,5 +1,7 @@
 # scottschmalz.com
 
+[![Build Status](https://travis-ci.com/schmalzs/scottschmalz.svg?branch=master)](https://travis-ci.com/schmalzs/scottschmalz)
+
 ### Setup
 
 1. Make sure you have [Node.js](https://nodejs.org/) and [Yarn](https://yarnpkg.com/) installed.
