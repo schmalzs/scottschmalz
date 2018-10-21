@@ -48,6 +48,9 @@ const Home = props => {
         />
       </Grid>
       <Grid item container justify="center" xs={12}>
+        <Typography variant="headline">Software Engineer</Typography>
+      </Grid>
+      <Grid item container justify="center" xs={12}>
         <Typography
           variant="subheading"
           onClick={trackEvent('navigation', 'email')}
