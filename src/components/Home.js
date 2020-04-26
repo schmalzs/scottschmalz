@@ -43,7 +43,7 @@ const Home = props => {
       <Grid item container justify="center" xs={12}>
         <Avatar
           alt="Scott Schmalz"
-          src="static/images/headshot.jpg"
+          src="headshot.jpg"
           className={classes.headshot}
         />
       </Grid>

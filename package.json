@@ -1,88 +1,41 @@
 {
   "name": "scottschmalz",
-  "version": "1.0.0",
-  "description": "",
-  "main": "dist/server/index.js",
-  "engine": {
-    "node": "8.12.0"
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.28",
+    "@fortawesome/free-brands-svg-icons": "^5.13.0",
+    "@fortawesome/free-solid-svg-icons": "^5.13.0",
+    "@fortawesome/react-fontawesome": "^0.1.9",
+    "@material-ui/core": "^4.9.11",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-ga": "^2.7.0",
+    "react-protected-mailto": "^1.0.3",
+    "react-scripts": "3.4.1"
   },
   "scripts": {
-    "build": "rimraf dist && run-p build:client:production build:server",
-    "build:watch": "rimraf dist && run-p build:client:watch build:server:watch",
-    "build:client:development": "rimraf dist/public && webpack --config webpack.config.dev.js",
-    "build:client:production": "rimraf dist/public && NODE_ENV=production webpack --config webpack.config.prod.js",
-    "build:client:watch": "nodemon --watch src/client --exec yarn build:client:development",
-    "build:server": "rimraf dist/server && babel src/server -d dist/server",
-    "build:server:watch": "nodemon --watch src/server --exec run-s build:server start",
-    "lint": "eslint .",
-    "heroku-postbuild": "yarn build",
-    "start": "NODE_ENV=production node dist/server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/schmalzs/scottschmalz.git"
+  "eslintConfig": {
+    "extends": "react-app"
   },
-  "author": "Scott Schmalz",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/schmalzs/scottschmalz/issues"
-  },
-  "homepage": "https://github.com/schmalzs/scottschmalz#readme",
-  "devDependencies": {
-    "@babel/cli": "^7.1.2",
-    "@babel/core": "^7.1.2",
-    "@babel/preset-env": "^7.1.0",
-    "@babel/preset-react": "^7.0.0",
-    "autoprefixer": "^9.1.3",
-    "babel-eslint": "^8.2.6",
-    "babel-loader": "^8.0.4",
-    "chai": "^4.1.2",
-    "copy-webpack-plugin": "^4.5.3",
-    "css-loader": "^1.0.0",
-    "eslint": "^5.3.0",
-    "eslint-config-airbnb": "^17.0.0",
-    "eslint-config-prettier": "3.0.1",
-    "eslint-plugin-import": "^2.13.0",
-    "eslint-plugin-jsx-a11y": "^6.1.1",
-    "eslint-plugin-prettier": "^2.6.2",
-    "eslint-plugin-react": "^7.11.1",
-    "favicons-webpack-plugin": "^0.0.9",
-    "html-webpack-plugin": "^3.2.0",
-    "mini-css-extract-plugin": "^0.4.4",
-    "mocha": "^5.2.0",
-    "node-sass": "^4.9.3",
-    "nodemon": "^1.18.3",
-    "npm-run-all": "^4.1.3",
-    "postcss-loader": "^3.0.0",
-    "precss": "^3.1.2",
-    "prettier": "^1.14.2",
-    "rimraf": "^2.6.2",
-    "sass-loader": "^7.1.0",
-    "sinon": "^6.1.5",
-    "style-loader": "^0.22.1",
-    "uglifyjs-webpack-plugin": "^2.0.1",
-    "webpack": "^4.17.1",
-    "webpack-bundle-analyzer": "^3.0.3",
-    "webpack-cli": "^3.1.0",
-    "webpack-merge": "^4.1.4",
-    "yarn": "^1.9.4"
-  },
-  "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.6",
-    "@fortawesome/free-brands-svg-icons": "^5.4.1",
-    "@fortawesome/free-solid-svg-icons": "^5.4.1",
-    "@fortawesome/react-fontawesome": "^0.1.3",
-    "@material-ui/core": "^3.2.2",
-    "classnames": "^2.2.6",
-    "compression": "^1.7.3",
-    "express": "^4.16.3",
-    "helmet": "^3.14.0",
-    "node-fetch": "^2.2.0",
-    "prop-types": "^15.6.2",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
-    "react-ga": "^2.5.3",
-    "react-protected-mailto": "^1.0.3"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
