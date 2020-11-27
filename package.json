@@ -9,13 +9,13 @@
     "@fortawesome/react-fontawesome": "^0.1.9",
     "@material-ui/core": "^4.9.11",
     "@testing-library/jest-dom": "^5.5.0",
-    "@testing-library/react": "^10.0.3",
-    "@testing-library/user-event": "^10.1.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-ga": "^2.7.0",
+    "@testing-library/react": "^11.2.2",
+    "@testing-library/user-event": "^12.2.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-ga": "^3.3.0",
     "react-protected-mailto": "^1.0.3",
-    "react-scripts": "3.4.1"
+    "react-scripts": "4.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
